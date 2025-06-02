@@ -83,7 +83,7 @@ class main():
             data = {
                 "id": track_id,
                 "duration": time_end[i] - time_start[i],
-                "picture": beyblade_data[track_id]['latest_crop']  # ✅ Akses by ID
+                "picture": beyblade_data[track_id]['latest_crop'] 
             }
             final_data.append(data)
         
