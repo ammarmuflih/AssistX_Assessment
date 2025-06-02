@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../test/images
+# test: ../test/images
+
+nc: 1
+names: ['Beyblade']
+
+roboflow:
+  workspace: thesis-k1dy4
+  project: beyblade-8fiwe
+  version: 2
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/thesis-k1dy4/beyblade-8fiwe/dataset/2

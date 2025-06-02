@@ -1,0 +1,5 @@
+pandas
+numpy
+opencv-python
+ultralytics
+torch==2.7.0+cu118 --find-links https://download.pytorch.org/whl/torch_stable.html
