@@ -148,29 +148,24 @@ class motionDetection():
             if object_crop.size == 0:
                 continue
                 
-            # Simpan crop berdasarkan track_id
             if track_id not in beyblade_data:
                 beyblade_data[track_id] = {}
             beyblade_data[track_id]['latest_crop'] = object_crop
             
-            # Deteksi blur
             blur_score = self.calculate_blur_score(object_crop)
             blur_scores[track_id] = blur_score
             
-            # Tentukan apakah objek sedang berputar
             if blur_score < motion_threshold:
                 is_spin[track_id] = True 
             else:
                 is_spin[track_id] = False
         
-        # Konversi ke format array untuk filter()
         track_ids = sorted(list(is_spin.keys())) 
         is_spin_array = []
         
         for i in range(min(2, len(track_ids))):
             is_spin_array.append(is_spin[track_ids[i]])
         
-        # Pad jika kurang dari 2
         while len(is_spin_array) < 2:
             is_spin_array.append(False)
         
